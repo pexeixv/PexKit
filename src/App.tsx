@@ -3,8 +3,6 @@ import Home from '@/pages/Home'
 import Demo from '@/pages/Demo'
 import NotFound from '@/pages/NotFound'
 import BaseLayout from '@/components/BaseLayout'
-import { DevTools as JotaiDevTools } from 'jotai-devtools'
-import 'jotai-devtools/styles.css'
 
 function App() {
   return (
@@ -19,7 +17,6 @@ function App() {
           <Route path="/minimal" element={<>Test</>} />
         </Route>
       </Routes>
-      <JotaiDevTools />
     </>
   )
 }
