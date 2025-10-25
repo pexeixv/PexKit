@@ -2,6 +2,7 @@ import { useAuth } from '@/hooks/useAuth'
 import { Button } from '@/components/ui/button'
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
 export function Login() {
   const { signInWithGoogle, user, loading } = useAuth()
@@ -30,17 +31,19 @@ export function Login() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100">
-      <div className="bg-white p-8 rounded-2xl shadow-xl max-w-md w-full">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">PexKit</h1>
-          <p className="text-gray-600">Your personal productivity toolkit</p>
-        </div>
+    <div className="min-h-screen flex items-center justify-center">
+      <Card className="max-w-md w-full">
+        <CardHeader className="text-center">
+          <CardTitle className="text-3xl font-bold">PexKit</CardTitle>
+          <CardDescription className="">MY personal productivity toolkit</CardDescription>
+        </CardHeader>
 
-        <Button onClick={handleSignIn} className="w-full" size="lg">
-          Sign in with Google
-        </Button>
-      </div>
+        <CardContent className="pt-0">
+          <Button onClick={handleSignIn} className="w-full cursor-pointer" size="lg">
+            Sign in with Google
+          </Button>
+        </CardContent>
+      </Card>
     </div>
   )
 }
