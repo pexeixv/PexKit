@@ -4,6 +4,7 @@ import BaseLayout from '@/components/BaseLayout'
 import { Login } from '@/pages/Login'
 import { Dashboard } from '@/pages/Dashboard'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
+import TodoPage from '@/pages/Todo'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route element={<BaseLayout />}>
           <Route path="/" element={<Navigate to="/dashboard" />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/todo" element={<TodoPage />} />
         </Route>
       </Route>
 
