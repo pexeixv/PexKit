@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "send": "pnpm build && firebase deploy --only hosting"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",

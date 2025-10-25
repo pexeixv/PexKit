@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import {
-  type User,
-  signInWithPopup,
+  User,
+  signInWithRedirect,
+  getRedirectResult,
   GoogleAuthProvider,
   signOut as firebaseSignOut,
   onAuthStateChanged,
@@ -9,7 +10,6 @@ import {
 import { auth } from '@/lib/firebase'
 
 const googleProvider = new GoogleAuthProvider()
-// Request profile and email explicitly
 googleProvider.addScope('profile')
 googleProvider.addScope('email')
 
@@ -18,17 +18,30 @@ export function useAuth() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    // Check for redirect result first
+    getRedirectResult(auth)
+      .then((result) => {
+        if (result) {
+          console.log('Signed in via redirect:', result.user.email)
+        }
+      })
+      .catch((error) => {
+        console.error('Redirect error:', error)
+      })
+
+    // Listen to auth state changes
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      console.log('Auth user:', user) // Debug log
       setUser(user)
       setLoading(false)
     })
+
     return unsubscribe
   }, [])
 
   const signInWithGoogle = async () => {
     try {
-      await signInWithPopup(auth, googleProvider)
+      // Use redirect instead of popup for production
+      await signInWithRedirect(auth, googleProvider)
     } catch (error) {
       console.error('Sign in error:', error)
       throw error
