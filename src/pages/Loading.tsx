@@ -1,6 +1,6 @@
 import { Skeleton } from '@/components/ui/skeleton'
 
-function Loading() {
+function LoadingPage() {
   return (
     <div className="min-h-screen flex flex-col space-y-4 p-4">
       <Skeleton className="h-40 w-full" />
@@ -10,4 +10,4 @@ function Loading() {
   )
 }
 
-export default Loading
+export default LoadingPage
