@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import {
-  User,
+  type User,
   signInWithRedirect,
   getRedirectResult,
   GoogleAuthProvider,
