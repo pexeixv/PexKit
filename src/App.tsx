@@ -5,6 +5,7 @@ import { Login } from '@/pages/Login'
 import { Dashboard } from '@/pages/Dashboard'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
 import TodoPage from '@/pages/Todo'
+import BirthdaysPage from '@/pages/Birthdays'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Navigate to="/dashboard" />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/todo" element={<TodoPage />} />
+          <Route path="/birthdays" element={<BirthdaysPage />} />
         </Route>
       </Route>
 

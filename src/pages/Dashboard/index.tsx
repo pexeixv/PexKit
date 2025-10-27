@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { ListTodo } from 'lucide-react'
+import { Cake, ListTodo } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const apps = [
@@ -11,11 +11,11 @@ const apps = [
     link: '/todo',
   },
   {
-    id: 'notes',
-    title: 'Notes',
-    description: 'Quickly capture and organize ideas',
-    icon: <ListTodo className="size-6" />,
-    link: '/todo',
+    id: 'birthday',
+    title: 'Birthdays',
+    description: 'Never forget important birthdays with reminders and calendar views',
+    icon: <Cake className="size-6" />,
+    link: '/birthdays',
   },
   {
     id: 'projects',
